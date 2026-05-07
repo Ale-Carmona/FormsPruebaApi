@@ -43,12 +43,13 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnPatch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(201, 421);
+            this.button1.Location = new System.Drawing.Point(12, 467);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 57);
             this.button1.TabIndex = 0;
@@ -148,7 +149,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(457, 421);
+            this.btnAgregar.Location = new System.Drawing.Point(457, 389);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(149, 57);
             this.btnAgregar.TabIndex = 12;
@@ -158,7 +159,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(714, 421);
+            this.btnActualizar.Location = new System.Drawing.Point(646, 389);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(136, 57);
             this.btnActualizar.TabIndex = 13;
@@ -168,7 +169,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(948, 421);
+            this.btnEliminar.Location = new System.Drawing.Point(826, 389);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(135, 57);
             this.btnEliminar.TabIndex = 14;
@@ -176,11 +177,22 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // btnPatch
+            // 
+            this.btnPatch.Location = new System.Drawing.Point(1001, 387);
+            this.btnPatch.Name = "btnPatch";
+            this.btnPatch.Size = new System.Drawing.Size(265, 59);
+            this.btnPatch.TabIndex = 15;
+            this.btnPatch.Text = "Actualizar Parcial";
+            this.btnPatch.UseVisualStyleBackColor = true;
+            this.btnPatch.Click += new System.EventHandler(this.btnPatch_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1320, 642);
+            this.ClientSize = new System.Drawing.Size(1320, 536);
+            this.Controls.Add(this.btnPatch);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
@@ -197,7 +209,6 @@
             this.Controls.Add(this.ldID);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -221,6 +232,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnPatch;
     }
 }
 

@@ -43,7 +43,11 @@ namespace FormsPruebaApi
             await eliminarRegistro();
             listaRegistros();
         }
-
+        private async void btnPatch_Click(object sender, EventArgs e)
+        {
+            listaRegistros();
+            await actualizaParcia();
+        }
         private async Task listaRegistros()
         {
 
@@ -54,7 +58,7 @@ namespace FormsPruebaApi
                 string data = await response.Content.ReadAsStringAsync();
                 var registros = JsonConvert.DeserializeObject<List<Usuarios>>(data);
 
-                    dgDatos.DataSource = registros;
+                dgDatos.DataSource = registros;
 
                 // Aquí ya tienes la lista correcta
             }
@@ -122,6 +126,35 @@ namespace FormsPruebaApi
             {
                 MessageBox.Show($"Error al eliminar registro: {response.ReasonPhrase}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private async Task actualizaParcia()
+        {
+            var diccionarioDatos = new Dictionary<string, object>();
+
+            diccionarioDatos.Add("Nombre", "Efrain");
+            int id = 1;
+
+            string jsonData = JsonConvert.SerializeObject(diccionarioDatos);
+            StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+            HttpRequestMessage request = new HttpRequestMessage(new HttpMethod("PATCH"), $"{apiUrl}/{id}")
+            {
+                Content = content
+            };
+
+            HttpResponseMessage response = await _httpclient.SendAsync(request);
+
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Actualizado parcialmente");
+            }
+
+            else
+            {
+                MessageBox.Show("Error");
+            }
+
         }
     }
 }
